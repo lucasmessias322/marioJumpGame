@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Keania+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Keania One", cursive;
+}
+
+.game-board {
+  width: 100%;
+  height: 500px;
+  border-top: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#87cee8, #e0f6ff);
+}
+
+.gameOver_Modal {
+  width: 100%;
+  height: 500px;
+  position: fixed;
+  background-color: #0008;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+div.gameOver_Modal > h2 {
+  color: rgb(255, 0, 0);
+  font-size: 150px;
+  -webkit-text-stroke: 0.01px rgb(0, 0, 0);
+}
+
+div.gameOver_Modal > span {
+  font-size: 30px;
+  color: rgb(255, 187, 0);
+  cursor: pointer;
+  animation: scoreAnimation 0.5s infinite alternate;
+}
+
+.scoreGame {
+  position: absolute;
+  right: 0;
+  padding: 10px 20px;
+
+  animation: scoreAnimation 3s infinite alternate;
+  z-index: 99999;
+}
+
+.scoreGame > span {
+  padding: 0px 10px;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  background-color: yellow;
+
+  border-radius: 10px;
+  border: 5px solid black;
+}
+
+div.floor {
+  position: absolute;
+  bottom: 0;
+}
+
+.pipe {
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+  padding-bottom: 34px;
+  right: -80px;
+}
+
+.mario {
+  width: 60px;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 34px;
+}
+
+.jump {
+  animation: jump 600ms ease-in-out;
+}
+
+.clouds {
+  position: absolute;
+  width: 550px;
+  right: -550px;
+}
+
+@keyframes pipeAnimation {
+  from {
+    right: -80px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+
+  40% {
+    bottom: 180px;
+  }
+  50% {
+    bottom: 180px;
+  }
+
+  60% {
+    bottom: 180px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes cloudsAnimation {
+  from {
+    right: -550px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes scoreAnimation {
+  from {
+    transform: rotate(-2deg);
+  }
+  to {
+    transform: rotate(2deg);
+  }
+}
